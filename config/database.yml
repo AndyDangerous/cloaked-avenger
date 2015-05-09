@@ -1,0 +1,19 @@
+common: &common
+  adapter: postgis
+  encoding: unicode
+  pool: 5
+  username: <%= ENV['DB_USER'] %>
+  host: localhost
+
+development:
+  <<: *common
+  database: on_the_way_to_development
+
+test:
+  <<: *common
+  database: on_the_way_to_test
+
+production:
+  <<: *common
+  database: on_the_way_to_production
+
