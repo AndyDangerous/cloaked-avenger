@@ -1,5 +1,6 @@
 module OnTheWay
   class API < Grape::API
+    include Grape::ActiveRecord::Extension
     # version 'v1'
     # format :json
 
@@ -16,7 +17,8 @@ module OnTheWay
     end
 
     post :directions do
-      Directions.new(clean_directions_params).route
+      route = Directions.new(clean_directions_params).route
+      route.shape.to_s
     end
 
     desc "Healthcheck"
