@@ -17,6 +17,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.7)
     arel (5.0.1.20140414130214)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -34,6 +35,8 @@ GEM
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -98,6 +101,7 @@ GEM
     rspec-mocks (3.1.2)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.1)
+    safe_yaml (1.0.4)
     simplecov (0.10.0)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -107,11 +111,15 @@ GEM
     thread_safe (0.3.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    vcr (2.9.3)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    webmock (1.20.4)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -130,3 +138,5 @@ DEPENDENCIES
   rack-test
   rake
   rspec
+  vcr
+  webmock

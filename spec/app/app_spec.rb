@@ -13,14 +13,16 @@ describe OnTheWay::API do
 
       let (:query) { {start_address: "Denver, CO", end_address: "Golden, CO"} }
 
-      it "returns a GeoJSON of the route between the points" do
+        it "returns a GeoJSON of the route between the points" do
 
-        post "/directions", query.to_json, {'CONTENT_TYPE' => 'application/json'}
+          VCR.use_cassette('mix_tape') do
+          post "/directions", query.to_json, {'CONTENT_TYPE' => 'application/json'}
 
-        expect(last_response.status).to eq(201)
+          expect(last_response.status).to eq(201)
 
-        expect(response["type"]).to eq("LineString")
-        expect(response["coordinates"].class).to eq(Array)
+          expect(response["type"]).to eq("LineString")
+          expect(response["coordinates"].class).to eq(Array)
+        end
       end
 
       context "handle errors" do

@@ -22,4 +22,6 @@ group :test do
   gem 'codeclimate-test-reporter'
   gem 'rspec'
   gem 'rack-test', require: 'rack/test'
+  gem 'vcr'
+  gem 'webmock'
 end
