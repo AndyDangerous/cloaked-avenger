@@ -29,6 +29,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    codeclimate-test-reporter (0.4.7)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -36,6 +38,7 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     equalizer (0.0.9)
     erubis (2.7.0)
     faraday (0.9.1)
@@ -95,8 +98,11 @@ GEM
     rspec-mocks (3.1.2)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.1)
-    shoulda-matchers (2.7.0)
-      activesupport (>= 3.0.0)
+    simplecov (0.10.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slop (3.6.0)
     thread_safe (0.3.4)
     tzinfo (1.2.2)
@@ -114,6 +120,7 @@ DEPENDENCIES
   activerecord-postgis-adapter
   better_errors
   binding_of_caller
+  codeclimate-test-reporter
   faraday
   geocoder
   grape
@@ -123,4 +130,3 @@ DEPENDENCIES
   rack-test
   rake
   rspec
-  shoulda-matchers
