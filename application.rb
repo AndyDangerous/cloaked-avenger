@@ -1,6 +1,6 @@
 require File.expand_path('../environment', __FILE__)
 
-module API
+module OnTheWay
 end
 
 # require 'app/helpers/route_helpers'
@@ -24,5 +24,5 @@ ApplicationServer = Rack::Builder.new {
     use Rack::SslEnforcer
   end
 
-  run App
+  run OnTheWay::API
 }

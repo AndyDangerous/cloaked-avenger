@@ -1,11 +1,11 @@
 Geocoder.configure(
 
   # geocoding service (see below for supported options):
-  lookup: :mapquest,
+  lookup: :google,
 
-  :mapquest => { :api_key => ENV['MAPQUEST_API_KEY'] },
+  # :api_key => ENV['MAPQUEST_API_KEY'],
   # IP address geocoding service (see below for supported options):
-  :ip_lookup => :freegeoip,
+  # :ip_lookup => :freegeoip,
 
   # caching (see below for details):
   # :cache => Redis.new,

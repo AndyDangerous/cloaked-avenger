@@ -1,14 +1,16 @@
-class Point
-  attr :latitude, :longitude, :location, :address
+module OnTheWay
+  class Point
+    attr :latitude, :longitude, :location, :address
 
-  # geocoded_by :address
-  # after_validation :geocode
+    def initialize(address)
+      @address = address
+      result = Geocoder.search(address)
+      @latitude = result.first.data['geometry']['location']['lat']
+      @longitude = result.first.data['geometry']['location']['lng']
+    end
 
-  def initialize(address)
-    @address = address
-  end
-
-  def self.locate!
-    # geocode address
+    def self.locate!
+      # geocode address
+    end
   end
 end
