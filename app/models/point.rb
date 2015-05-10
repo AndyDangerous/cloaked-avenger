@@ -3,9 +3,9 @@ module OnTheWay
     attr :latitude, :longitude, :location
 
     def initialize(locator)
-      result = Geocoder.search(locator)
-      @latitude = result.first.data['geometry']['location']['lat']
-      @longitude = result.first.data['geometry']['location']['lng']
+      result = Geocoder.search(locator).first
+      @latitude = result.data['geometry']['location']['lat']
+      @longitude = result.data['geometry']['location']['lng']
     end
   end
 end
