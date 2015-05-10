@@ -2,7 +2,7 @@ module OnTheWay
   class API < Grape::API
     include Grape::ActiveRecord::Extension
     # version 'v1'
-    # format :json
+    format :json
 
     helpers do
       def clean_directions_params
@@ -18,7 +18,8 @@ module OnTheWay
 
     post :directions do
       route = Directions.new(clean_directions_params).route
-      route.shape.to_s
+
+      route.shape
     end
 
     desc "Healthcheck"
